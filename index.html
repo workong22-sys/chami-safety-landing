@@ -44,46 +44,34 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(5, 13, 26, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(30, 58, 95, 0.6);
+      background: transparent;
       padding: 0 5%;
-      height: 64px;
+      height: 80px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
+      pointer-events: none;
     }
 
     .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0px; /* Modified by Hermes */
+      position: fixed;
+      top: 16px;
+      left: 24px;
+      z-index: 101;
+      display: block;
       text-decoration: none;
+      pointer-events: auto;
     }
 
-    .nav-logo-icon {
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 800;
-      color: white;
-      letter-spacing: -1px;
+    .nav-logo img {
+      height: 130px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
     }
 
-    .nav-logo-text {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .nav-logo-text span {
-      color: var(--accent-cyan);
-    }
+    .nav-logo-icon { display: none; }
+    .nav-logo-text { display: none; }
 
     .nav-cta {
       background: var(--accent-blue);
@@ -94,6 +82,7 @@
       font-weight: 600;
       text-decoration: none;
       transition: background 0.2s;
+      pointer-events: auto;
     }
 
     .nav-cta:hover { background: var(--accent-light); }
@@ -942,11 +931,13 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">
-    <img src="chamisafety_logo_transparent.png" alt="CHAMISAFETY 로고" style="height:72px;width:auto;display:block;">
-  </a>
   <a href="mailto:ceo@chami-safety.kr" class="nav-cta">Contact Us</a>
 </nav>
+
+<!-- LOGO: 좌측 상단 고정 -->
+<a href="#" class="nav-logo">
+  <img src="chamisafety_logo_transparent.png" alt="CHAMISAFETY 로고">
+</a>
 
 <!-- HERO -->
 <section class="hero" id="home">
