@@ -50,6 +50,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      gap: 12px;
       pointer-events: none;
     }
 
@@ -86,6 +87,20 @@
     }
 
     .nav-cta:hover { background: var(--accent-light); }
+
+    .nav-app {
+      background: #34D399;
+      color: #0A1628;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      pointer-events: auto;
+    }
+
+    .nav-app:hover { background: #6EE7B7; transform: translateY(-1px); }
 
     /* ── HERO ─────────────────────────────────── */
     .hero {
@@ -931,6 +946,7 @@
 
 <!-- NAV -->
 <nav>
+  <a href="https://www.chami-safety.com" class="nav-app" target="_blank" rel="noopener">차미마스터 바로가기 →</a>
   <a href="mailto:ceo@chami-safety.kr" class="nav-cta">Contact Us</a>
 </nav>
 
@@ -946,7 +962,7 @@
   <div class="hero-content">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      V2 Risk Engine — Active Development · 특허 출원 완료
+      AI Risk Engine · 특허 출원 완료
     </div>
     <p class="hero-en">AI-Native Construction Safety Management Platform</p>
     <h1>건설현장의 모든 위험을<br /><span class="highlight">데이터로 예측하다</span></h1>
@@ -955,7 +971,8 @@
       CHAMISAFETY 차미안전은 AI 뒤에 숨지 않습니다. 현장 근로자와 함께 호흡합니다.
     </p>
     <div class="hero-actions">
-      <a href="mailto:ceo@chami-safety.kr" class="btn-primary">Contact Us →</a>
+      <a href="https://www.chami-safety.com" class="btn-primary" target="_blank" rel="noopener">차미마스터 바로가기 →</a>
+      <a href="mailto:ceo@chami-safety.kr" class="btn-secondary">Contact Us</a>
       <a href="#technology" class="btn-secondary">Our Technology</a>
     </div>
   </div>
@@ -965,7 +982,7 @@
 <div class="status-bar">
   <div class="status-item">
     <span class="status-dot green"></span>
-    AI Risk Engine V2 — Core Logic Complete
+    AI Risk Engine — Core Logic Complete
   </div>
   <div class="status-item">
     <span class="status-dot orange"></span>
@@ -1202,7 +1219,7 @@
           <div class="timeline-connector"></div>
         </div>
         <div class="timeline-content">
-          <p class="timeline-title">V2 Risk Engine 개발 &amp; K계수 구조 고도화 ← 현재</p>
+          <p class="timeline-title">Risk Engine 개발 &amp; K계수 구조 고도화 ← 현재</p>
           <p class="timeline-desc">3층 K계수 체계 구현 · 특허 출원(10-2026-0082579) · 위험성평가 로직 고도화</p>
         </div>
       </div>
