@@ -817,6 +817,15 @@
       text-decoration: underline;
     }
 
+    .footer-legal .license-notice {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--navy-border);
+      font-size: 0.66rem;
+      line-height: 1.7;
+      opacity: 0.72;
+    }
+
     /* ── PARTICIPATION FLOW ──────────────────── */
     .participation-flow {
       display: grid;
@@ -1151,7 +1160,7 @@
       <p class="section-tag">Our Technology</p>
       <h2 class="section-title">세계 최고 수준의 LLM과<br />규칙 기반 안전 엔진의 결합</h2>
       <p class="section-desc">
-        산업안전보건법(KOSHA) 기준을 AI 모델에 내재화하여,
+        산업안전보건법 요건과 공단이 공개한 자료를 기준으로,
         현장 사진 한 장으로 법적 위험 요소를 즉시 진단합니다.
       </p>
     </div>
@@ -1170,24 +1179,25 @@
 
       <div class="tech-card">
         <div class="tech-icon icon-cyan">⚡</div>
-        <h3>Dynamic Risk Scoring Engine</h3>
+        <h3>규칙 기반 위험도 산출 엔진</h3>
         <p>
-          산안법 기준과 실제 현장 데이터(지역·계절·기인물·현장 상황)를
-          결합한 독자적 Multi-dimensional Risk Scoring System으로
-          현장별 맞춤 위험도를 정량적으로 산출합니다.
+          법령 요건과 현장 조건(지역·계절·기인물·환경)을 반영해
+          현장별 위험도를 규칙 기반으로 산출합니다.
+          동일 입력 = 동일 결과, 재현 가능한 평가.
         </p>
-        <span class="tag">Proprietary Algorithm</span>
+        <span class="tag">특허 출원 중</span>
       </div>
 
       <div class="tech-card">
         <div class="tech-icon icon-purple">📊</div>
-        <h3>Advanced SIF Data Integration</h3>
+        <h3>공단 중대재해 사례 참조</h3>
         <p>
-          중대재해 사고사례(SIF) 데이터베이스를 Context-Aware
-          Weighting Logic으로 위험 산출에 통합.
-          과거 사고 패턴이 현재 현장 위험도에 즉각 반영됩니다.
+          안전보건공단이 공개한 「산업재해 고위험요인(SIF) 아카이브」의
+          건설업 중대재해 사례를 원문 그대로 참조합니다.
+          공단이 분류한 공종·작업·기인물 체계를 변경 없이 사용하며,
+          현장 조건에 해당하는 사례를 위험성평가 시 함께 제시합니다.
         </p>
-        <span class="tag">Statistical Safety Model</span>
+        <span class="tag">출처: 한국산업안전보건공단</span>
       </div>
 
       <div class="tech-card">
@@ -1509,6 +1519,7 @@
     <p>상호: 차미안전 (CHAMISAFETY) · 대표: 이규식 · 사업자등록번호: 589-32-02045</p>
     <p>소재지: 경기도 용인시 처인구 성산로 128-14, 지하 1층 (역북동, 예선빌딩)</p>
     <p>업태/종목: 정보통신업 / 응용 소프트웨어 개발 및 공급업 · 문의: <a href="mailto:ceo@chami-safety.kr">ceo@chami-safety.kr</a></p>
+    <p class="license-notice">본 서비스는 한국산업안전보건공단에서 2026년 작성하여 공공누리 제3유형(출처표시-변경금지)으로 개방한 「산업재해 고위험요인(SIF) 아카이브」를 원문 변경 없이 이용하였으며, 해당 저작물은 <a href="https://www.data.go.kr/data/15140383/fileData.do" target="_blank" rel="noopener">공공데이터포털</a>에서 무료로 다운받으실 수 있습니다. 또한 한국산업안전보건공단이 공개·배포한 「사고사망 핵심위험요인(SIF) 평가표」를 원문 변경 없이 참고하였습니다.</p>
   </div>
 </footer>
 
