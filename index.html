@@ -438,13 +438,21 @@
     }
 
     .diagram-title {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
+      font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: var(--text-primary);
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 12px;
+    }
+    .diagram-quote {
+      text-align: center;
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+      color: var(--text-primary);
+      margin-bottom: 36px;
+      font-style: italic;
+      font-weight: 500;
     }
 
     .flow {
@@ -907,17 +915,26 @@
     }
 
     .pf-badge {
-      margin-top: 4px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      padding: 3px 10px;
+      margin-top: 6px;
+      font-size: clamp(0.72rem, 0.95vw, 0.82rem);
+      font-weight: 800;
+      padding: 6px 12px;
       border-radius: 100px;
+      letter-spacing: 0;
+      box-shadow: 0 1px 2px rgba(10,22,40,0.15);
+      white-space: nowrap;      /* 한 줄 — 끝 글자 하나만 떨어지는 줄바꿈 방지 */
+      word-break: keep-all;
+      text-align: center;
+      max-width: 100%;
+      align-self: center;
     }
+    @media (max-width: 768px) { .pf-badge { white-space: normal; } }
 
-    .pf-badge-green  { background: rgba(16,185,129,0.18); color: var(--navy-deep); border: 1px solid rgba(16,185,129,0.4); }
-    .pf-badge-blue   { background: rgba(10,22,40,0.10);   color: var(--navy-deep); border: 1px solid rgba(10,22,40,0.3); }
-    .pf-badge-orange { background: rgba(245,158,11,0.18); color: var(--navy-deep); border: 1px solid rgba(245,158,11,0.4); }
-    .pf-badge-cyan   { background: rgba(52,211,153,0.18); color: var(--navy-deep); border: 1px solid rgba(52,211,153,0.4); }
+    /* 흰 카드 위 배지 — 진한 채움색에 밝은 글자 (대비 ≥ 7:1) */
+    .pf-badge-green  { background: #0E7A55; color: #FFFFFF; border: 1px solid #0B6244; }
+    .pf-badge-blue   { background: #0A1628; color: #34D399; border: 1px solid #0A1628; }
+    .pf-badge-orange { background: #9A5B12; color: #FFFFFF; border: 1px solid #7C480E; }
+    .pf-badge-cyan   { background: #1F8F66; color: #FFFFFF; border: 1px solid #176F4F; }
 
     .pf-arrow {
       font-size: 1.3rem;
@@ -1322,7 +1339,7 @@
     <!-- WORKER PARTICIPATION FLOW -->
     <div class="diagram">
       <p class="diagram-title">How It Works — 근로자 참여형 AI Safety Loop</p>
-      <p style="text-align:center; font-size:0.85rem; color:var(--text-secondary); margin-bottom:36px; font-style:italic;">
+      <p class="diagram-quote">
         "CHAMISAFETY 차미안전은 AI 뒤에 숨지 않습니다. 현장 근로자와 함께 호흡합니다."
       </p>
       <div class="participation-flow">
@@ -1499,7 +1516,7 @@
         </div>
         <div class="timeline-content">
           <p class="timeline-title">현장 실증 ← 현재</p>
-          <p class="timeline-desc">○○재해예방 전문지도기관 시연 · ○○현장 안전컨설팅 적용 중</p>
+          <p class="timeline-desc">365건설안전(주) MOU 체결 · 기술지도 현장 차미마스터 도입 중 · 인천 2개 기관 협의 중</p>
         </div>
       </div>
 
@@ -1763,8 +1780,8 @@
           <span class="news-card-cat">현장</span>
           <span class="news-card-date">2026-07-13</span>
         </div>
-        <h3>[소식] 차미안전, 재해예방 전문지도기관 2곳과 협업 논의 진행 (2026)</h3>
-        <p>용인·인천 소재 건설업 재해예방 전문지도기관 2곳과 협업 논의가 진행 중입니다. 시연 후 MOU 체결 예정.</p>
+        <h3>[소식] 차미안전, 365건설안전(주)와 업무협약(MOU) 체결 — 기술지도 현장에 차미마스터 도입 중</h3>
+        <p>2026년 8월 건설업 재해예방 전문지도기관 365건설안전(주)와 업무협약을 체결했습니다. 기술지도 현장에 차미마스터를 도입 중이며, 인천 소재 전문지도기관 2곳과 협의를 진행하고 있습니다.</p>
       </a>
       <a href="/blog/intro-chamisafety/" class="news-card">
         <div class="news-card-meta">
