@@ -39,20 +39,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy-deepest: #050D1A;
+      /* v3 색도 전환 (CONTENT-C1-LANDING-COLOR, 2026-09-04) — 변수명은 유지, 값만 v3 확정색으로 교체 */
+      --navy-deepest: #34D399;
       --navy-deep:    #0A1628;
-      --navy-mid:     #0F2040;
-      --navy-card:    #162847;
-      --navy-border:  #1E3A5F;
-      --accent-blue:  #2563EB;
-      --accent-light: #3B82F6;
-      --accent-cyan:  #06B6D4;
-      --accent-glow:  rgba(37, 99, 235, 0.25);
-      --text-primary: #F0F6FF;
-      --text-secondary: #94A3B8;
-      --text-muted:   #64748B;
+      --navy-mid:     #2AB583;
+      --navy-card:    #FFFFFF;
+      --navy-border:  rgba(10,22,40,.12);
+      --accent-blue:  #0A1628;
+      --accent-light: #2AB583;
+      --accent-cyan:  #0A1628;
+      --accent-glow:  rgba(52,211,153,.25);
+      --text-primary: #0A1628;
+      --text-secondary: #4A5566;
+      --text-muted:   #8892A0;
       --badge-green:  #10B981;
-      --badge-orange: #F59E0B;
+      --badge-orange: #FBBF24;
+      --amber:        #DDA15E;
+      --rose:         #C76B86;
+      --card-soft:    #F4FBF8;
+      --surface:      #FFFFFF;
     }
 
     html { scroll-behavior: smooth; }
@@ -115,8 +120,8 @@
     .nav-cta:hover { background: var(--accent-light); }
 
     .nav-app {
-      background: #34D399;
-      color: #0A1628;
+      background: #0A1628;
+      color: #34D399;
       padding: 8px 20px;
       border-radius: 8px;
       font-size: 0.85rem;
@@ -126,7 +131,7 @@
       pointer-events: auto;
     }
 
-    .nav-app:hover { background: #6EE7B7; transform: translateY(-1px); }
+    .nav-app:hover { background: #1E3A5F; transform: translateY(-1px); }
 
     .nav-blog {
       background: rgba(255,255,255,0.08);
@@ -159,16 +164,16 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(37,99,235,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 30% at 80% 70%, rgba(6,182,212,0.07) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(255,255,255,0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 80% 70%, rgba(10,22,40,0.08) 0%, transparent 60%);
     }
 
     .hero-grid {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(30,58,95,0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(30,58,95,0.15) 1px, transparent 1px);
+        linear-gradient(rgba(10,22,40,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10,22,40,0.10) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
     }
@@ -179,13 +184,13 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(37,99,235,0.15);
-      border: 1px solid rgba(37,99,235,0.4);
+      background: var(--navy-deep);
+      border: 1px solid var(--navy-deep);
       border-radius: 100px;
       padding: 6px 16px;
       font-size: 0.8rem;
       font-weight: 500;
-      color: #93C5FD;
+      color: var(--navy-deepest);
       margin-bottom: 32px;
       letter-spacing: 0.02em;
     }
@@ -211,7 +216,7 @@
     }
 
     .hero h1 .highlight {
-      background: linear-gradient(135deg, #60A5FA, #06B6D4);
+      background: linear-gradient(135deg, #0A1628, #2AB583);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -228,7 +233,7 @@
 
     .hero-sub {
       font-size: clamp(0.95rem, 2vw, 1.1rem);
-      color: var(--text-secondary);
+      color: var(--text-primary);
       max-width: 600px;
       margin: 0 auto 48px;
       line-height: 1.8;
@@ -242,25 +247,25 @@
     }
 
     .btn-primary {
-      background: #34D399;
-      color: #0A1628;
+      background: #0A1628;
+      color: #fff;
       padding: 14px 32px;
       border-radius: 10px;
       font-size: 1rem;
       font-weight: 700;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 24px rgba(52,211,153,0.35);
+      box-shadow: 0 4px 24px rgba(10,22,40,0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(52,211,153,0.5);
+      box-shadow: 0 8px 32px rgba(10,22,40,0.5);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(10,22,40,0.3);
       color: var(--text-primary);
       padding: 14px 32px;
       border-radius: 10px;
@@ -271,15 +276,15 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.55);
+      border-color: rgba(10,22,40,0.45);
     }
 
     /* ── STATUS BAR ───────────────────────────── */
     .status-bar {
-      background: rgba(16,22,40,0.8);
-      border-top: 1px solid rgba(30,58,95,0.5);
-      border-bottom: 1px solid rgba(30,58,95,0.5);
+      background: var(--surface);
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
       padding: 16px 5%;
       display: flex;
       align-items: center;
@@ -327,7 +332,7 @@
 
     .section-desc {
       font-size: 1rem;
-      color: var(--text-secondary);
+      color: var(--text-primary);
       max-width: 560px;
       line-height: 1.8;
     }
@@ -371,27 +376,25 @@
     }
 
     .tech-card:hover {
-      border-color: rgba(37,99,235,0.5);
+      border-color: rgba(10,22,40,0.35);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 12px 40px rgba(10,22,40,0.18);
     }
 
     .tech-card:hover::before { opacity: 1; }
 
     .tech-icon {
-      width: 52px; height: 52px;
-      border-radius: 12px;
+      width: 88px; height: 88px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      background: var(--card-soft);
     }
+    .tech-icon img { width: 80px; height: 80px; display: block; }
 
-    .icon-blue   { background: rgba(37,99,235,0.15); }
-    .icon-cyan   { background: rgba(6,182,212,0.15); }
-    .icon-purple { background: rgba(139,92,246,0.15); }
-    .icon-green  { background: rgba(16,185,129,0.15); }
+    .icon-blue, .icon-cyan, .icon-purple, .icon-green { background: var(--card-soft); }
 
     .tech-card h3 {
       font-size: 1.1rem;
@@ -433,7 +436,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       text-align: center;
       margin-bottom: 40px;
     }
@@ -469,7 +472,7 @@
     .flow-box .flow-label {
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--text-primary);
       line-height: 1.4;
     }
 
@@ -481,8 +484,8 @@
     }
 
     .flow-result {
-      background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(6,182,212,0.1));
-      border: 1px solid rgba(37,99,235,0.4);
+      background: linear-gradient(135deg, rgba(10,22,40,0.08), rgba(52,211,153,0.18));
+      border: 1px solid rgba(10,22,40,0.25);
       border-radius: 12px;
       padding: 16px 28px;
       text-align: center;
@@ -493,12 +496,12 @@
     .flow-result .flow-label {
       font-size: 0.78rem;
       font-weight: 700;
-      color: #93C5FD;
+      color: var(--navy-deep);
     }
 
     /* ── STATUS SECTION ──────────────────────── */
     .status-section {
-      background: var(--navy-deep);
+      background: var(--navy-deepest);
     }
 
     .status-inner {
@@ -540,7 +543,7 @@
     }
 
     .progress-bar-wrap {
-      background: rgba(255,255,255,0.06);
+      background: rgba(10,22,40,.18);
       border-radius: 100px;
       height: 6px;
       margin-bottom: 10px;
@@ -549,12 +552,22 @@
     .progress-bar-fill {
       height: 100%;
       border-radius: 100px;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      background: var(--navy-deep);
+    }
+
+    .progress-chip {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      margin-right: 6px;
+      vertical-align: -1px;
+      border: 1.5px solid var(--navy-deep);
     }
 
     .progress-note {
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
     }
 
     .timeline {
@@ -566,14 +579,14 @@
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 120px 1px 1fr;
+      grid-template-columns: 120px 16px 1fr;
       gap: 0 24px;
       position: relative;
     }
 
     .timeline-date {
       font-size: 0.78rem;
-      color: var(--text-muted);
+      color: var(--text-primary);
       padding: 20px 0;
       text-align: right;
     }
@@ -585,20 +598,24 @@
     }
 
     .timeline-dot {
-      width: 12px; height: 12px;
+      width: 16px; height: 16px;
       border-radius: 50%;
-      margin-top: 24px;
+      margin-top: 22px;
       flex-shrink: 0;
+      box-sizing: border-box;
+      border: 3px solid #0A1628;
+      background: #0A1628;
     }
 
-    .timeline-dot.done   { background: var(--badge-green); box-shadow: 0 0 8px var(--badge-green); }
-    .timeline-dot.active { background: var(--accent-blue); box-shadow: 0 0 10px var(--accent-blue); animation: pulse 2s infinite; }
-    .timeline-dot.next   { background: var(--navy-border); }
+    /* 그린 바탕 위 — 잉크 링으로 명암 대비 */
+    .timeline-dot.done   { background: #0A1628; border-color: #0A1628; box-shadow: 0 0 0 3px rgba(255,255,255,0.85); }
+    .timeline-dot.active { background: #FFFFFF; border-color: #0A1628; box-shadow: 0 0 0 4px rgba(10,22,40,0.25); animation: pulse 2s infinite; }
+    .timeline-dot.next   { background: transparent; border-color: #0A1628; border-width: 2px; }
 
     .timeline-connector {
       flex: 1;
-      width: 1px;
-      background: var(--navy-border);
+      width: 2px;
+      background: rgba(10,22,40,0.55);
     }
 
     .timeline-content {
@@ -614,7 +631,7 @@
 
     .timeline-desc {
       font-size: 0.78rem;
-      color: var(--text-secondary);
+      color: var(--text-primary);
     }
 
     /* ── CONTACT SECTION ─────────────────────── */
@@ -631,7 +648,7 @@
     .contact h2 { margin-bottom: 16px; }
 
     .contact p {
-      color: var(--text-secondary);
+      color: var(--text-primary);
       margin-bottom: 40px;
       line-height: 1.8;
     }
@@ -657,7 +674,7 @@
 
     .contact-hint {
       font-size: 0.82rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       margin-bottom: 32px;
     }
 
@@ -678,7 +695,7 @@
 
     /* ── NEWS SECTION ─────────────────────────── */
     .news-section {
-      background: var(--navy-deep);
+      background: var(--navy-deepest);
     }
 
     .news-inner {
@@ -720,16 +737,16 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #34D399;
-      background: rgba(52,211,153,0.12);
-      border: 1px solid rgba(52,211,153,0.3);
+      color: var(--navy-deep);
+      background: rgba(52,211,153,0.18);
+      border: 1px solid rgba(52,211,153,0.4);
       padding: 3px 10px;
       border-radius: 100px;
     }
 
     .news-card-date {
       font-size: 0.72rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
     }
 
     .news-card h3 {
@@ -757,7 +774,7 @@
 
     /* ── FOOTER ──────────────────────────────── */
     footer {
-      background: var(--navy-deepest);
+      background: var(--navy-card);
       border-top: 1px solid var(--navy-border);
       padding: 32px 5%;
     }
@@ -786,7 +803,7 @@
 
     .footer-copy {
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
     }
 
     .footer-right {
@@ -798,7 +815,7 @@
 
     .footer-tech-note {
       font-size: 0.72rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-style: italic;
     }
 
@@ -808,12 +825,12 @@
       padding-top: 20px;
       border-top: 1px solid var(--navy-border);
       font-size: 0.72rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       line-height: 1.9;
     }
 
     .footer-legal a {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       text-decoration: underline;
     }
 
@@ -823,7 +840,6 @@
       border-top: 1px solid var(--navy-border);
       font-size: 0.66rem;
       line-height: 1.7;
-      opacity: 0.72;
     }
 
     /* ── PARTICIPATION FLOW ──────────────────── */
@@ -847,20 +863,21 @@
     }
 
     .pf-step-result {
-      background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(6,182,212,0.08));
-      border-color: rgba(37,99,235,0.45);
+      background: linear-gradient(135deg, rgba(10,22,40,0.08), rgba(52,211,153,0.18));
+      border-color: rgba(10,22,40,0.3);
     }
 
     .pf-num {
       font-size: 0.65rem;
       font-weight: 800;
-      color: var(--text-muted);
+      color: var(--navy-deep);
       letter-spacing: 0.1em;
     }
 
     .pf-num-result { color: var(--accent-cyan); }
 
-    .pf-icon { font-size: 28px; }
+    .pf-icon { width: 64px; height: 64px; margin: 0 auto; }
+    .pf-icon img { width: 64px; height: 64px; display: block; }
 
     .pf-title {
       font-size: 0.9rem;
@@ -876,7 +893,7 @@
 
     .pf-desc {
       font-size: 0.72rem;
-      color: var(--text-secondary);
+      color: var(--text-primary);
       line-height: 1.65;
     }
 
@@ -888,10 +905,10 @@
       border-radius: 100px;
     }
 
-    .pf-badge-green  { background: rgba(16,185,129,0.15); color: #34D399; border: 1px solid rgba(16,185,129,0.3); }
-    .pf-badge-blue   { background: rgba(37,99,235,0.15);  color: #93C5FD; border: 1px solid rgba(37,99,235,0.3); }
-    .pf-badge-orange { background: rgba(245,158,11,0.15); color: #FCD34D; border: 1px solid rgba(245,158,11,0.3); }
-    .pf-badge-cyan   { background: rgba(6,182,212,0.15);  color: #67E8F9; border: 1px solid rgba(6,182,212,0.3); }
+    .pf-badge-green  { background: rgba(16,185,129,0.18); color: var(--navy-deep); border: 1px solid rgba(16,185,129,0.4); }
+    .pf-badge-blue   { background: rgba(10,22,40,0.10);   color: var(--navy-deep); border: 1px solid rgba(10,22,40,0.3); }
+    .pf-badge-orange { background: rgba(245,158,11,0.18); color: var(--navy-deep); border: 1px solid rgba(245,158,11,0.4); }
+    .pf-badge-cyan   { background: rgba(52,211,153,0.18); color: var(--navy-deep); border: 1px solid rgba(52,211,153,0.4); }
 
     .pf-arrow {
       font-size: 1.3rem;
@@ -902,16 +919,26 @@
     }
 
     /* ── DASHBOARD MOCKUP ─────────────────────── */
+    /* 이 위젯은 앱 스크린샷을 모사한 독립 다크 UI이므로, 전역 색 뒤집기와
+       무관하게 원래 다크 테마 값으로 지역 재정의한다(대비 붕괴 방지). */
     .dashboard-mockup {
       margin-top: 40px;
-      background: #0A1628;
-      border: 1px solid var(--navy-border);
+      background: #FFFFFF;
+      border: 1px solid rgba(10,22,40,0.14);
       border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 6px 20px rgba(10,60,44,0.12), 0 1px 3px rgba(10,22,40,0.06);
+      --navy-mid: #F4FBF8;
+      --navy-border: rgba(10,22,40,0.12);
+      --navy-card: #FFFFFF;
+      --text-primary: #0A1628;
+      --text-secondary: #4A5566;
+      --text-muted: #4A5566;
+      --accent-cyan: #2AB583;
     }
 
     .db-header {
-      background: #0F2040;
+      background: #0A1628;
       border-bottom: 1px solid var(--navy-border);
       padding: 10px 16px;
       display: flex;
@@ -937,7 +964,7 @@
     .db-title {
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: #DCE7F0;
       margin-left: 4px;
     }
 
@@ -982,8 +1009,8 @@
       margin-bottom: 4px;
     }
 
-    .db-val-red   { color: #F87171; }
-    .db-val-green { color: #34D399; }
+    .db-val-red   { color: #C2413B; }
+    .db-val-green { color: #1F8F66; }
 
     .db-metric-lbl {
       font-size: 0.62rem;
@@ -1029,10 +1056,10 @@
     .db-finding-sev {
       font-size: 0.62rem;
       font-weight: 800;
-      color: #F87171;
+      color: #C2413B;
     }
 
-    .db-sev-ok { color: #34D399; }
+    .db-sev-ok { color: #1F8F66; }
 
     .db-footer-bar {
       display: flex;
@@ -1045,7 +1072,7 @@
 
     .db-worker-badge {
       font-size: 0.72rem;
-      color: #34D399;
+      color: #1F8F66;
       font-weight: 600;
     }
 
@@ -1054,6 +1081,19 @@
       color: var(--accent-cyan);
       font-weight: 700;
       cursor: pointer;
+    }
+
+    /* ── HERO CHARACTER ───────────────────────── */
+    .hero-char {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      max-width: 30vw;
+      z-index: 1;
+      pointer-events: none;
+      filter: drop-shadow(0 10px 24px rgba(10,22,40,0.25));
     }
 
     /* ── RESPONSIVE ──────────────────────────── */
@@ -1075,10 +1115,18 @@
       .nav-app, .nav-cta, .nav-blog { font-size: 0.72rem; padding: 6px 12px; }
 
       .hero { padding: 100px 4% 60px; }
+      .hero-char {
+        position: static;
+        transform: none;
+        width: 180px;
+        max-width: 60vw;
+        margin: 24px auto 0;
+        display: block;
+      }
       section { padding: 64px 4%; }
       .status-bar { gap: 20px; padding: 16px 4%; }
       .diagram { padding: 28px 16px; }
-      .timeline-item { grid-template-columns: 80px 1px 1fr; }
+      .timeline-item { grid-template-columns: 80px 16px 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .footer-right { align-items: flex-start; }
 
@@ -1099,11 +1147,17 @@
 
       .hero-actions { flex-direction: column; align-items: center; }
       .btn-primary, .btn-secondary { width: 100%; max-width: 320px; text-align: center; }
-      .timeline-item { grid-template-columns: 64px 1px 1fr; gap: 0 12px; }
+      .timeline-item { grid-template-columns: 64px 16px 1fr; gap: 0 12px; }
       .timeline-date { font-size: 0.7rem; }
       .db-metrics { grid-template-columns: repeat(2, 1fr); }
       .db-finding-txt { font-size: 0.65rem; }
     }
+    .cert-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cert-badge { background: var(--surface); border: 1.5px solid #0A1628; border-radius: 12px; padding: 12px 14px; display: grid; gap: 3px; font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; }
+    .cert-badge .cert-kind { font-weight: 800; color: var(--text-primary); font-size: 0.88rem; }
+    .cert-badge .cert-kind::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #34D399; border: 2px solid #0A1628; margin-right: 8px; vertical-align: -1px; }
+    .cert-badge .cert-no, .cert-badge .cert-valid { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+    @media (max-width: 768px) { .cert-badges { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -1118,7 +1172,7 @@
 
 <!-- LOGO: 좌측 상단 고정 -->
 <a href="#" class="nav-logo">
-  <img src="chamisafety_logo_dark.png" alt="CHAMISAFETY 로고" width="512" height="512">
+  <img src="chamisafety_logo_light.png" alt="CHAMISAFETY 로고" width="512" height="512">
 </a>
 
 <!-- HERO -->
@@ -1136,7 +1190,7 @@
       중대재해처벌법 전면 시행 — 안전관리의 패러다임이 바뀝니다.<br />
       CHAMISAFETY 차미안전은 AI 뒤에 숨지 않습니다. 현장 근로자와 함께 호흡합니다.
     </p>
-    <div class="hero-plain" style="max-width:760px;margin:28px auto 0;padding:20px 24px;background:rgba(22,40,71,0.55);border:1px solid var(--navy-border);border-radius:14px;text-align:left;">
+    <div class="hero-plain" style="max-width:760px;margin:28px auto 0;padding:20px 24px;background:rgba(255,255,255,0.85);border:1px solid var(--navy-border);border-radius:14px;text-align:left;">
       <p style="font-size:0.98rem;color:var(--text-primary);line-height:1.65;margin-bottom:12px;">
         <strong>What we do:</strong> CHAMISAFETY is a South Korea–based B2B software (SaaS) company.
         Our platform helps construction firms complete legally mandated safety work — risk assessments,
@@ -1155,6 +1209,7 @@
       <a href="#technology" class="btn-secondary">Our Technology</a>
     </div>
   </div>
+  <img src="/assets/char/chami_master_front.png" alt="차미마스터 캐릭터" class="hero-char">
 </section>
 
 <!-- STATUS BAR -->
@@ -1187,7 +1242,7 @@
 
     <div class="tech-grid">
       <div class="tech-card">
-        <div class="tech-icon icon-blue">👁️</div>
+        <div class="tech-icon icon-blue"><img src="/assets/char/pose_magnifier.png" alt=""></div>
         <h3>Vision-AI 위험 탐지</h3>
         <p>
           Gemini &amp; Claude 멀티모달 모델 기반 현장 사진·영상 분석.
@@ -1198,7 +1253,7 @@
       </div>
 
       <div class="tech-card">
-        <div class="tech-icon icon-cyan">⚡</div>
+        <div class="tech-icon icon-cyan"><img src="/assets/char/pose_fist_up.png" alt=""></div>
         <h3>규칙 기반 위험도 산출 엔진</h3>
         <p>
           법령 요건과 현장 조건(지역·계절·기인물·환경)을 반영해
@@ -1209,7 +1264,7 @@
       </div>
 
       <div class="tech-card">
-        <div class="tech-icon icon-purple">📊</div>
+        <div class="tech-icon icon-purple"><img src="/assets/char/pose_point_sign.png" alt=""></div>
         <h3>공단 중대재해 사례 참조</h3>
         <p>
           안전보건공단이 공개한 「산업재해 고위험요인(SIF) 아카이브」의
@@ -1221,7 +1276,7 @@
       </div>
 
       <div class="tech-card">
-        <div class="tech-icon icon-green">📋</div>
+        <div class="tech-icon icon-green"><img src="/assets/char/pose_clipboard.png" alt=""></div>
         <h3>자동 법정 보고서 생성</h3>
         <p>
           위험성평가서, TBM 일지, 안전점검 체크리스트를
@@ -1241,7 +1296,7 @@
       <div class="participation-flow">
         <div class="pf-step">
           <div class="pf-num">01</div>
-          <div class="pf-icon">📱</div>
+          <div class="pf-icon"><img src="/assets/char/pose_stop_hand.png" alt=""></div>
           <div class="pf-title">Voice of Field</div>
           <div class="pf-sub">근로자 참여형 데이터 수집</div>
           <div class="pf-desc">근로자가 QR·앱으로 위험요소를 직접 촬영하고 TBM 의견을 등록합니다.</div>
@@ -1250,7 +1305,7 @@
         <div class="pf-arrow">→</div>
         <div class="pf-step">
           <div class="pf-num">02</div>
-          <div class="pf-icon">🤖</div>
+          <div class="pf-icon"><img src="/assets/char/pose_open_arms.png" alt=""></div>
           <div class="pf-title">AI Co-Pilot</div>
           <div class="pf-sub">AI-Human 협업 분석</div>
           <div class="pf-desc">AI 분석 결과와 근로자의 체감 위험도를 교차 검증하여 정확도와 현장감을 결합합니다.</div>
@@ -1259,7 +1314,7 @@
         <div class="pf-arrow">→</div>
         <div class="pf-step">
           <div class="pf-num">03</div>
-          <div class="pf-icon">📢</div>
+          <div class="pf-icon"><img src="/assets/char/pose_toolbox_run.png" alt=""></div>
           <div class="pf-title">Active TBM</div>
           <div class="pf-sub">모바일 TBM 실시간 환류</div>
           <div class="pf-desc">AI 분석 결과를 근로자 전원과 즉시 공유하고, 디지털 확인·서명으로 실무 교육을 완결합니다.</div>
@@ -1268,7 +1323,7 @@
         <div class="pf-arrow">→</div>
         <div class="pf-step pf-step-result">
           <div class="pf-num pf-num-result">04</div>
-          <div class="pf-icon">✅</div>
+          <div class="pf-icon"><img src="/assets/char/pose_thumbs_up.png" alt=""></div>
           <div class="pf-title">Verified Report</div>
           <div class="pf-sub">참여 인증 법정 보고서</div>
           <div class="pf-desc">근로자 서명이 포함된 위험성평가서와 TBM 일지가 자동 출력됩니다. 법적 방어력 완벽 확보.</div>
@@ -1324,7 +1379,7 @@
             </div>
           </div>
           <div class="db-footer-bar">
-            <span class="db-worker-badge">👷 근로자 12명 TBM 서명 완료</span>
+            <span class="db-worker-badge">근로자 12명 TBM 서명 완료</span>
             <span class="db-report-btn">법정보고서 출력 →</span>
           </div>
         </div>
@@ -1340,14 +1395,14 @@
     <p class="section-tag">Status &amp; Vision</p>
     <h2 class="section-title">현재 개발 현황</h2>
     <p class="section-desc">
-      Currently testing MVP &amp; preparing commercial launch.<br />
+      Preparing commercial launch.<br />
       2026년 10월 건설사 B2B 정식 상업화를 목표로 하고 있습니다.
     </p>
 
     <div class="progress-cards">
       <div class="progress-card">
         <div class="progress-header">
-          <span class="progress-label">위험성평가 Risk Assessment</span>
+          <span class="progress-label"><span class="progress-chip" style="background:#fff"></span>위험성평가 Risk Assessment</span>
           <span class="progress-pct">90%</span>
         </div>
         <div class="progress-bar-wrap">
@@ -1358,7 +1413,7 @@
 
       <div class="progress-card">
         <div class="progress-header">
-          <span class="progress-label">작업전 안전점검 TBM</span>
+          <span class="progress-label"><span class="progress-chip" style="background:var(--amber)"></span>작업전 안전점검 TBM</span>
           <span class="progress-pct">85%</span>
         </div>
         <div class="progress-bar-wrap">
@@ -1369,11 +1424,11 @@
 
       <div class="progress-card">
         <div class="progress-header">
-          <span class="progress-label">기술지도 Technical Guidance</span>
-          <span class="progress-pct">60%</span>
+          <span class="progress-label"><span class="progress-chip" style="background:var(--rose)"></span>기술지도 Technical Guidance</span>
+          <span class="progress-pct">75%</span>
         </div>
         <div class="progress-bar-wrap">
-          <div class="progress-bar-fill" style="width: 60%"></div>
+          <div class="progress-bar-fill" style="width: 75%"></div>
         </div>
         <p class="progress-note">법정 서식 대응 · 현장 점검 이력 관리</p>
       </div>
@@ -1411,7 +1466,7 @@
           <div class="timeline-connector"></div>
         </div>
         <div class="timeline-content">
-          <p class="timeline-title">현장 실증 &amp; 클로즈드 베타 ← 현재</p>
+          <p class="timeline-title">현장 실증 ← 현재</p>
           <p class="timeline-desc">○○재해예방 전문지도기관 시연 · ○○현장 안전컨설팅 적용 중</p>
         </div>
       </div>
@@ -1458,11 +1513,11 @@
         <p style="font-size:1.25rem;font-weight:800;color:var(--text-primary);margin-bottom:4px;">이규식 <span style="font-size:0.95rem;font-weight:600;color:var(--text-secondary);">Gyusik Lee</span></p>
         <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.85;margin-bottom:14px;">
           대표 · 제품 총괄 — 위험성평가 엔진 설계 및 현장 검증<br />
-          <span style="color:var(--text-muted);">Founder &amp; CEO — risk-assessment engine design and field validation</span>
+          <span style="color:var(--text-secondary);">Founder &amp; CEO — risk-assessment engine design and field validation</span>
         </p>
         <ul style="list-style:none;padding:0;margin:0;font-size:0.88rem;color:var(--text-secondary);line-height:2;">
           <li>· 건설현장 안전관리 실무 <strong style="color:var(--text-primary);">15년</strong> — 한국건설기술인협회 등재</li>
-          <li>· 건설안전기사 <span style="color:var(--text-muted);">(Construction Safety Engineer, national certification)</span></li>
+          <li>· 건설안전기사 <span style="color:var(--text-secondary);">(Construction Safety Engineer, national certification)</span></li>
           <li>· 건설현장 재해예방 기술지도 · 안전컨설팅 수행</li>
         </ul>
         <a href="https://www.linkedin.com/in/chamisafety" target="_blank" rel="noopener"
@@ -1472,80 +1527,173 @@
       </div>
     </div>
 
-    <div style="background:var(--navy-deep);border:1px solid var(--navy-border);border-radius:14px;padding:28px;">
+    <div style="background:var(--card-soft);border:1px solid var(--navy-border);border-radius:14px;padding:28px;">
       <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:16px;">Company</p>
       <table style="width:100%;border-collapse:collapse;font-size:0.88rem;color:var(--text-secondary);line-height:1.9;">
         <tr>
-          <td style="padding:6px 0;width:150px;color:var(--text-muted);">기업명 / Company</td>
+          <td style="padding:6px 0;width:150px;color:var(--text-secondary);">기업명 / Company</td>
           <td style="padding:6px 0;color:var(--text-primary);">차미안전 (CHAMISAFETY)</td>
         </tr>
         <tr>
-          <td style="padding:6px 0;color:var(--text-muted);">설립 / Founded</td>
+          <td style="padding:6px 0;color:var(--text-secondary);">설립 / Founded</td>
           <td style="padding:6px 0;color:var(--text-primary);">2026년 7월 1일</td>
         </tr>
         <tr>
-          <td style="padding:6px 0;color:var(--text-muted);">대표 / CEO</td>
+          <td style="padding:6px 0;color:var(--text-secondary);">대표 / CEO</td>
           <td style="padding:6px 0;">이규식 (Gyusik Lee)</td>
         </tr>
         <tr>
-          <td style="padding:6px 0;color:var(--text-muted);">사업자등록번호</td>
+          <td style="padding:6px 0;color:var(--text-secondary);">사업자등록번호</td>
           <td style="padding:6px 0;">589-32-02045</td>
         </tr>
         <tr>
-          <td style="padding:6px 0;color:var(--text-muted);">소재지 / Location</td>
+          <td style="padding:6px 0;color:var(--text-secondary);">소재지 / Location</td>
           <td style="padding:6px 0;">경기도 용인시 처인구 성산로 128-14 지하1층 (역북동, 예선빌딩)</td>
         </tr>
         <tr>
-          <td style="padding:6px 0;color:var(--text-muted);">개발 단계 / Stage</td>
-          <td style="padding:6px 0;">MVP · 클로즈드 베타 <span style="color:var(--text-muted);">(closed beta · commercial launch Oct 2026)</span></td>
+          <td style="padding:6px 0;color:var(--text-secondary);">개발 단계 / Stage</td>
+          <td style="padding:6px 0;">현장 실증 <span style="color:var(--text-secondary);">(commercial launch Oct 2026)</span></td>
         </tr>
       </table>
 
       <div style="margin-top:22px;padding-top:20px;border-top:1px solid var(--navy-border);">
         <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:12px;">공적 확인 / Government Certifications</p>
-        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.95;margin:0;">
-          · <strong style="color:var(--text-primary);">소기업(소상공인) 확인</strong> — 중소기업기본법 제2조 · 소상공인기본법 제2조<br />
-          · <strong style="color:var(--text-primary);">창업기업 확인</strong> — 중소기업창업 지원법 제39조제2항 · 경기지방중소벤처기업청장
-        </p>
+        <div class="cert-badges">
+          <div class="cert-badge">
+            <span class="cert-kind">소기업(소상공인) 확인서</span>
+            <span class="cert-no">발급번호 0010-2026-653894</span>
+            <span class="cert-valid">유효기간 2026-07-06 ~ 2027-03-31</span>
+            <span class="cert-by">중소기업기본법 제2조 · 소상공인기본법 제2조 · 중소기업현황정보시스템(sminfo.mss.go.kr) 확인 가능</span>
+          </div>
+          <div class="cert-badge">
+            <span class="cert-kind">창업기업 확인서</span>
+            <span class="cert-no">발급번호 제 202608-58222-0093633 호</span>
+            <span class="cert-valid">유효기간 2026-08-03 ~ 2029-08-03 · 창업기준 충족일 2026-07-01</span>
+            <span class="cert-by">중소기업창업 지원법 제39조제2항 · 경기지방중소벤처기업청장</span>
+          </div>
+        </div>
+        <p style="font-size:0.72rem;color:var(--text-secondary);margin:10px 0 0;">확인서 원본은 요청 시 제공합니다.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- QUOTE -->
-<section class="quote-section" id="quote" style="padding:84px 5%;background:#0A1628;border-top:1px solid #1E3A5F;">
+<section class="quote-section" id="quote" style="padding:84px 5%;background:var(--navy-deepest);border-top:1px solid var(--navy-border);">
   <div style="max-width:920px;margin:0 auto;text-align:center;">
     <p class="section-tag">Quote</p>
     <h2 class="section-title">기술지도 · 안전컨설팅 견적문의</h2>
-    <p style="color:#94A3B8;line-height:1.85;max-width:660px;margin:0 auto 8px;">
-      차미안전은 <strong style="color:#F0F6FF;">경기·인천지역 재해예방 전문지도기관과 협력</strong>하여
-      건설현장 기술지도와 안전컨설팅을 지원합니다.
-    </p>
-    <p style="color:#94A3B8;line-height:1.85;max-width:660px;margin:0 auto 30px;">
-      아래 서류를 준비해 <strong style="color:#34D399;">ceo@chami-safety.kr</strong>로 보내주시면 정확한 견적을 안내해 드립니다.
-    </p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;max-width:780px;margin:0 auto 30px;text-align:left;">
-      <div style="background:#162847;border:1px solid #1E3A5F;border-radius:12px;padding:16px 18px;"><span style="display:inline-block;width:22px;height:22px;background:#34D399;color:#0A1628;border-radius:50%;text-align:center;font-weight:800;font-size:0.8rem;line-height:22px;margin-right:8px;">1</span><span style="color:#F0F6FF;font-weight:600;font-size:0.92rem;">건축허가서</span></div>
-      <div style="background:#162847;border:1px solid #1E3A5F;border-radius:12px;padding:16px 18px;"><span style="display:inline-block;width:22px;height:22px;background:#34D399;color:#0A1628;border-radius:50%;text-align:center;font-weight:800;font-size:0.8rem;line-height:22px;margin-right:8px;">2</span><span style="color:#F0F6FF;font-weight:600;font-size:0.92rem;">현장 고용·산재 가입증명원</span></div>
-      <div style="background:#162847;border:1px solid #1E3A5F;border-radius:12px;padding:16px 18px;"><span style="display:inline-block;width:22px;height:22px;background:#34D399;color:#0A1628;border-radius:50%;text-align:center;font-weight:800;font-size:0.8rem;line-height:22px;margin-right:8px;">3</span><span style="color:#F0F6FF;font-weight:600;font-size:0.92rem;">건축주(발주자) 사업자등록증</span></div>
-      <div style="background:#162847;border:1px solid #1E3A5F;border-radius:12px;padding:16px 18px;"><span style="display:inline-block;width:22px;height:22px;background:#34D399;color:#0A1628;border-radius:50%;text-align:center;font-weight:800;font-size:0.8rem;line-height:22px;margin-right:8px;">4</span><span style="color:#F0F6FF;font-weight:600;font-size:0.92rem;">시공사 사업자등록증</span></div>
-      <div style="background:#162847;border:1px solid #1E3A5F;border-radius:12px;padding:16px 18px;"><span style="display:inline-block;width:22px;height:22px;background:#34D399;color:#0A1628;border-radius:50%;text-align:center;font-weight:800;font-size:0.8rem;line-height:22px;margin-right:8px;">5</span><span style="color:#F0F6FF;font-weight:600;font-size:0.92rem;">건설면허증</span></div>
-      <div style="background:#162847;border:1px solid #1E3A5F;border-radius:12px;padding:16px 18px;"><span style="display:inline-block;width:22px;height:22px;background:#34D399;color:#0A1628;border-radius:50%;text-align:center;font-weight:800;font-size:0.8rem;line-height:22px;margin-right:8px;">6</span><span style="color:#F0F6FF;font-weight:600;font-size:0.92rem;">공사 도급계약서</span></div>
+
+    <div class="pcards">
+      <button class="pcard" data-p="team"><b>각 작업팀</b><small>위험성평가 1팀 단위</small><em>월 1만원</em></button>
+      <button class="pcard" data-p="org"><b>조직도</b><small>현장 조직 운영</small><em>월 1만원</em></button>
+      <button class="pcard" data-p="tbm"><b>현장 TBM</b><small>작업 전 안전점검</small><em>월 1만원</em></button>
+      <button class="pcard" data-p="hq"><b>건설사 본사</b><small>현장 구독 · 본사 묶음</small><em>월 10만원~</em></button>
+      <button class="pcard" data-p="agency"><b>건설업 재해예방전문지도기관</b><small>기관원 단위 계약</small><em>월 90만원~</em></button>
     </div>
-    <a href="mailto:ceo@chami-safety.kr?subject=기술지도·안전컨설팅%20견적문의&body=[기술지도·안전컨설팅%20견적문의]%0D%0A%0D%0A현장명:%0D%0A공사%20위치:%0D%0A공사%20규모(도급액/연면적):%0D%0A연락처:%0D%0A%0D%0A※%20아래%20서류를%20첨부해%20주시면%20정확한%20견적이%20가능합니다.%0D%0A1.%20건축허가서%0D%0A2.%20현장%20고용·산재%20가입증명원%0D%0A3.%20건축주(발주자)%20사업자등록증%0D%0A4.%20시공사%20사업자등록증%0D%0A5.%20건설면허증%0D%0A6.%20공사%20도급계약서%0D%0A%0D%0A---%0D%0A[개인정보%20수집·이용%20동의]%0D%0A본%20메일%20발송으로%20아래%20내용에%20동의합니다.%0D%0A·%20수집항목:%20성명·업체명·연락처·이메일·문의내용%20및%20첨부%20서류%0D%0A·%20이용목적:%20견적%20산출%20및%20문의%20답변%0D%0A·%20보유기간:%20계약%20미성립%20시%20처리%20완료%20후%201개월%20이내%20파기%0D%0A·%20동의를%20거부하실%20수%20있으나%20이%20경우%20견적%20안내가%20제한됩니다.%0D%0A·%20전문:%20https://chami-safety.kr/privacy/" class="btn-primary">견적문의 메일 보내기 →</a>
-    <p style="color:#64748B;font-size:0.82rem;margin-top:16px;line-height:1.7;">버튼을 누르면 필요 서류 안내가 담긴 메일이 자동으로 작성됩니다. 서류를 첨부해 보내주시면 검토 후 견적을 회신드립니다.</p>
-    <div style="max-width:780px;margin:20px auto 0;padding:16px 20px;background:rgba(22,40,71,0.5);border:1px solid #1E3A5F;border-radius:12px;text-align:left;">
-      <p style="color:#94A3B8;font-size:0.8rem;line-height:1.8;margin:0;">
-        <strong style="color:#F0F6FF;">개인정보 수집·이용 안내</strong><br/>
+
+    <div class="ppanel" id="p-team"><b>각 작업팀 — 월 1만원 / 팀</b>
+      <p>협력사·작업팀이 자기 팀의 위험성평가만 쓰는 최소 단위입니다. 팀 수만큼 더합니다.</p>
+      <label>팀 수 <input type="number" min="1" value="1" data-calc="team"></label> <span class="pout" id="o-team">월 1만원</span>
+      <small>부가세 별도 · 15일 시험운영</small>
+    </div>
+
+    <div class="ppanel" id="p-org"><b>조직도 — 월 1만원 / 현장</b>
+      <p>현장 조직도와 공종 배정을 운영합니다. 위험성평가·TBM 과 함께 쓰면 현장 구독(건설사 본사 카드)이 유리합니다.</p>
+      <span class="pout">월 1만원</span> <small>부가세 별도 · 15일 시험운영</small>
+    </div>
+
+    <div class="ppanel" id="p-tbm"><b>현장 TBM — 월 1만원 / 현장 (20명 한도)</b>
+      <p>작업 전 안전점검(TBM) 단품입니다. 근로자 20명까지이며, 그 이상은 현장 구독으로 전환합니다.</p>
+      <span class="pout">월 1만원</span> <small>부가세 별도 · 15일 시험운영</small>
+    </div>
+
+    <div class="ppanel" id="p-hq"><b>건설사 본사 — 현장 구독 + 본사 묶음</b>
+      <p>현장마다 공사금액으로 정해지는 월 임대료를 합산합니다. 5현장 이상은 묶음가가 적용됩니다.</p>
+      <div class="est">
+        <label>공사금액 <input type="number" min="1" value="80" data-calc="hq" id="hq-amt"> 억원</label>
+        <label>현장 수 <input type="number" min="1" value="1" data-calc="hq" id="hq-n"> 개</label>
+      </div>
+      <span class="pout" id="o-hq">월 29만원</span> <small id="o-hq-sub"></small>
+      <table class="est-tbl">
+        <tr><th>20억 미만</th><td>월 10만원</td><th>20~50억</th><td>월 15만원</td></tr>
+        <tr><th>50억</th><td>월 20만원</td><th>120억</th><td>월 40만원 (선형 비례)</td></tr>
+        <tr><th>본사 묶음 5현장</th><td colspan="3">월 40만원 (+20억 이상 현장당 4만원) · 50억 이상 현장 보유 건설사·본사 시스템 연동은 협의</td></tr>
+      </table>
+    </div>
+
+    <div class="ppanel" id="p-agency"><b>건설업 재해예방전문지도기관 — 기관원 1인당 월 15만원</b>
+      <p>기관원 수 단위로 계약합니다. 정원(지도기관 6인 · 진단기관 5인) 미만은 성립하지 않습니다. 협업사 할인은 별도입니다.</p>
+      <div class="est">
+        <label>기관 유형 <select id="ag-type" data-calc="agency"><option value="6">건설업 재해예방전문지도기관 (6인 정원)</option><option value="5">안전보건진단기관 (5인 정원)</option></select></label>
+        <label>기관원 <input type="number" min="5" value="6" id="ag-n" data-calc="agency"> 명</label>
+      </div>
+      <span class="pout" id="o-agency">월 90만원</span> <small id="o-agency-sub"></small>
+    </div>
+
+    <p style="margin:28px 0 0"><a href="mailto:ceo@chami-safety.kr?subject=기술지도·안전컨설팅%20견적문의&body=[기술지도·안전컨설팅%20견적문의]%0D%0A%0D%0A현장명:%0D%0A공사%20위치:%0D%0A공사%20규모(도급액/연면적):%0D%0A연락처:%0D%0A%0D%0A※%20아래%20서류를%20첨부해%20주시면%20정확한%20견적이%20가능합니다.%0D%0A1.%20건축허가서%0D%0A2.%20현장%20고용·산재%20가입증명원%0D%0A3.%20건축주(발주자)%20사업자등록증%0D%0A4.%20시공사%20사업자등록증%0D%0A5.%20건설면허증%0D%0A6.%20공사%20도급계약서%0D%0A%0D%0A---%0D%0A[개인정보%20수집·이용%20동의]%0D%0A본%20메일%20발송으로%20아래%20내용에%20동의합니다.%0D%0A·%20수집항목:%20성명·업체명·연락처·이메일·문의내용%20및%20첨부%20서류%0D%0A·%20이용목적:%20견적%20산출%20및%20문의%20답변%0D%0A·%20보유기간:%20계약%20미성립%20시%20처리%20완료%20후%201개월%20이내%20파기%0D%0A·%20동의를%20거부하실%20수%20있으나%20이%20경우%20견적%20안내가%20제한됩니다.%0D%0A·%20전문:%20https://chami-safety.kr/privacy/" class="btn-primary">견적문의 메일 보내기 →</a></p>
+    <p style="color:var(--navy-deep);font-size:0.82rem;margin-top:16px;line-height:1.7;">버튼을 누르면 필요 서류 안내가 담긴 메일이 자동으로 작성됩니다. 서류를 첨부해 보내주시면 검토 후 견적을 회신드립니다.</p>
+    <div style="max-width:780px;margin:20px auto 0;padding:16px 20px;background:rgba(255,255,255,0.9);border:1px solid var(--navy-border);border-radius:12px;text-align:left;">
+      <p style="color:var(--text-secondary);font-size:0.8rem;line-height:1.8;margin:0;">
+        <strong style="color:var(--navy-deep);">개인정보 수집·이용 안내</strong><br/>
         · <strong>수집항목</strong>: 성명·업체명·연락처·이메일·문의내용 및 위 첨부 서류<br/>
         · <strong>이용목적</strong>: 기술지도·안전컨설팅 견적 산출 및 문의 답변<br/>
-        · <strong>보유기간</strong>: <span style="color:#34D399;">계약 미성립 시 처리 완료 후 1개월 이내 파기</span> (계약 성립 시 법정 보존기간에 따름)<br/>
+        · <strong>보유기간</strong>: <span style="color:var(--navy-deep);">계약 미성립 시 처리 완료 후 1개월 이내 파기</span> (계약 성립 시 법정 보존기간에 따름)<br/>
         · 동의를 거부하실 수 있으나, 이 경우 견적 안내가 제한됩니다. 메일 발송 시 위 사항에 동의한 것으로 봅니다.<br/>
-        · 자세한 내용은 <a href="/privacy/" style="color:#34D399;text-decoration:underline;">개인정보 처리방침</a>을 확인해 주십시오.
+        · 자세한 내용은 <a href="/privacy/" style="color:var(--navy-deep);text-decoration:underline;">개인정보 처리방침</a>을 확인해 주십시오.
       </p>
     </div>
   </div>
 </section>
+<style>
+  #quote .pcards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  #quote .pcard{background:var(--navy-card);color:var(--navy-deep);border:2px solid transparent;border-radius:12px;padding:14px 12px;text-align:left;cursor:pointer;font:inherit;display:grid;gap:2px}
+  #quote .pcard b{font-size:14px;line-height:1.3}
+  #quote .pcard small{font-size:11px;color:var(--text-secondary)}
+  #quote .pcard em{font-style:normal;font-weight:700;margin-top:6px}
+  #quote .pcard:hover{border-color:var(--navy-deep)}
+  #quote .pcard.on{border-color:var(--navy-deep);background:var(--navy-deep);color:#fff}
+  #quote .pcard.on small{color:rgba(255,255,255,.7)}
+  #quote .pcard.on em{color:var(--navy-deepest)}
+  #quote .pcard:focus-visible{outline:3px solid var(--navy-deep);outline-offset:2px}
+  #quote .ppanel{display:none;background:var(--navy-card);border-radius:12px;padding:16px 18px;margin-top:12px;color:var(--navy-deep);font-size:13px;text-align:left}
+  #quote .ppanel.on{display:block}
+  #quote .ppanel>b{font-size:15px;display:block;margin-bottom:4px}
+  #quote .ppanel p{margin:0 0 10px;color:var(--text-secondary)}
+  #quote .pout{display:inline-block;font-weight:900;font-size:22px;background:var(--navy-deep);color:var(--navy-deepest);padding:4px 12px;border-radius:8px;margin-right:8px}
+  #quote .est{display:grid;gap:8px;margin:8px 0 12px}
+  #quote .est label{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  #quote .est input[type=number],#quote .est select{padding:6px 8px;border:1.5px solid var(--navy-deep);border-radius:8px;background:#fff;font:inherit}
+  #quote .est input[type=number]{width:72px}
+  #quote .est-tbl{margin-top:12px;font-size:12px;background:var(--card-soft);width:100%;border-collapse:collapse}
+  #quote .est-tbl th{background:transparent;color:var(--navy-deep);white-space:nowrap;padding:9px 12px;text-align:left;font-weight:700}
+  #quote .est-tbl td{color:var(--navy-deep);padding:9px 12px;text-align:left}
+  @media (max-width:820px){#quote .pcards{grid-template-columns:1fr 1fr}}
+</style>
+<script>
+(function(){
+  const q=id=>document.getElementById(id);
+  document.querySelectorAll('#quote .pcard').forEach(c=>c.addEventListener('click',()=>{
+    const k=c.dataset.p, on=c.classList.contains('on');
+    document.querySelectorAll('#quote .pcard').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('#quote .ppanel').forEach(x=>x.classList.remove('on'));
+    if(!on){c.classList.add('on'); q('p-'+k).classList.add('on');}
+  }));
+  function fee(a){ return a<20?10 : a<50?15 : 20+(a-50)*2/7; }
+  function calc(){
+    const t=+document.querySelector('#quote [data-calc=team]').value||1; q('o-team').textContent='월 '+t+'만원';
+    const a=+q('hq-amt').value||0, n=Math.max(1,+q('hq-n').value||1); let m,sub;
+    if(n>=5 && a<50){ const big=a>=20?n:0; m=40+4*big; sub='본사 묶음 5현장 40만'+(big?' + 20억↑ '+big+'현장 × 4만':'')+(n>5?' · 6현장↑ 산근은 협의':''); }
+    else { m=fee(a)*n; sub=(a<20?'20억 미만 기준가':a<50?'20~50억 정액':'50억↑ 산식')+(n>1?' × '+n+'현장':'')+(a>=50&&n>1?' · 50억↑ 다현장 = 협의':''); }
+    q('o-hq').textContent='월 '+Math.round(m)+'만원'; q('o-hq-sub').textContent=sub+' · 부가세 별도 · 15일 시험운영';
+    const need=+q('ag-type').value, k=+q('ag-n').value||0, kk=Math.max(k,need);
+    q('o-agency').textContent='월 '+(15*kk)+'만원'; q('o-agency-sub').textContent='기관원 '+kk+'명 × 15만'+(k<need?' · 정원 '+need+'인 미만은 성립하지 않아 정원으로 계산':'')+' · 부가세 별도';
+  }
+  q('ag-type').addEventListener('change',()=>{q('ag-n').min=q('ag-type').value;q('ag-n').value=q('ag-type').value;calc();});
+  document.querySelectorAll('#quote [data-calc]').forEach(el=>el.addEventListener('input',calc));
+  calc();
+})();
+</script>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -1584,7 +1732,7 @@
           <span class="news-card-date">2026-07-13</span>
         </div>
         <h3>[소식] 차미안전, 재해예방 전문지도기관 2곳과 협업 논의 진행 (2026)</h3>
-        <p>용인·인천 소재 건설업 재해예방 전문지도기관 2곳과 협업 논의가 진행 중입니다. MVP 시연 후 MOU 체결 예정.</p>
+        <p>용인·인천 소재 건설업 재해예방 전문지도기관 2곳과 협업 논의가 진행 중입니다. 시연 후 MOU 체결 예정.</p>
       </a>
       <a href="/blog/intro-chamisafety/" class="news-card">
         <div class="news-card-meta">
@@ -1612,6 +1760,37 @@
       </a>
     </div>
     <a href="/blog/" class="news-more">블로그 전체 보기 →</a>
+  </div>
+</section>
+
+<!-- COMPLIANCE / OPERATIONS POLICY -->
+<section id="compliance" style="padding:56px 5%;background:var(--navy-deepest);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-tag">Compliance</p>
+    <h2 class="section-title" style="font-size:1.3rem;">운영정책</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px;">
+      <div style="background:var(--surface);border:1px solid var(--navy-border);border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(10,22,40,0.06);">
+        <p style="font-weight:700;color:var(--text-primary);margin-bottom:8px;font-size:0.92rem;">개인정보 수집·보유</p>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;margin:0;">수집 항목·목적을 처리방침에 공개하고 보유기간을 항목별로 나눕니다.<br>법정 안전기록 3년 · 챗봇 대화 로그 1년 · 현장사진 원본 1년 후 파기(마스킹본 3년) · 견적 문의 상담 후 1년</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--navy-border);border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(10,22,40,0.06);">
+        <p style="font-weight:700;color:var(--text-primary);margin-bottom:8px;font-size:0.92rem;">안전성 확보 조치</p>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;margin:0;">접근권한 최소화(DB 행 단위 권한) · 주요 정보 암호화 저장 · 전송 구간 TLS · 정기 보안 점검<br><span style="color:var(--text-secondary);">개인정보 보호법 §29 · 시행령 §30</span></p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--navy-border);border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(10,22,40,0.06);">
+        <p style="font-weight:700;color:var(--text-primary);margin-bottom:8px;font-size:0.92rem;">위탁·국외 이전 고지</p>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;margin:0;">클라우드 인프라(GCP · Supabase · Vercel, 서울 리전 우선)와 결제 대행 위탁을 처리방침에 업체·국가·항목·기간으로 명시</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--navy-border);border-radius:14px;padding:20px 22px;box-shadow:0 2px 8px rgba(10,22,40,0.06);">
+        <p style="font-weight:700;color:var(--text-primary);margin-bottom:8px;font-size:0.92rem;">AI 이용 고지</p>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.7;margin:0;">「이 글은 제미나이와 클로드의 도움으로 작성했습니다.」 — 블로그·홍보물 공통 문구<br>챗봇은 세션마다 AI 응답임을 고지 · 위험성평가 실시·확정은 사업주와 현장 책임자가 합니다</p>
+      </div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--navy-border);border-radius:12px;padding:12px 18px;margin-top:16px;font-size:0.78rem;color:var(--text-secondary);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;">
+      <strong style="color:var(--text-primary);">정보통신망 이용촉진 및 정보보호 등에 관한 법률</strong>
+      <span>· 광고성 정보(메일·문자)는 사전 수신동의를 받은 분께만 보냅니다 — 수신거부 1클릭</span>
+      <span>· 접속기록·쿠키는 처리방침 §10 에 따라 거부할 수 있습니다</span>
+    </div>
   </div>
 </section>
 
