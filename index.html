@@ -369,10 +369,21 @@
     .ps-field { margin-top: 56px; }
     .ps-field h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
     .ps-field .ps-en { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary); opacity: .7; margin-bottom: 18px; }
-    .ps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; align-items: start; }
+    /* 제품 화면 — 모든 그림 4:3 한 비율 · 한 줄 2장(카드 400px) · 휴대폰은 1장 (A-1 10-08 사장님 「최적화 비율로 여백을 자르고 미세조정」) */
+    .ps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 400px)); gap: 20px; align-items: stretch; }
+    @media (max-width: 640px) { .ps-grid { grid-template-columns: minmax(0, 1fr); } }
+    .ps-video { margin-top: 36px; max-width: 820px; }
+    .ps-video .ps-vwrap { position: relative; }
+    .ps-video .ps-sound { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 12px 22px; border-radius: 999px; border: 0; background: rgba(10, 22, 40, .72); color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+    .ps-video .ps-sound:hover { background: rgba(10, 22, 40, .88); }
+    .ps-video .ps-sound[hidden] { display: none; }
+    .ps-video video { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 14px; border: 1px solid var(--navy-border); background: #000; }
+    .ps-video p { margin-top: 10px; font-size: .88rem; color: var(--text-primary); }
+    .ps-video p span { display: block; font-size: .76rem; color: var(--text-muted); margin-top: 2px; }
+    .ps-grid .ps-slot { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; border: 1px dashed var(--navy-border); border-radius: 14px; background: transparent; color: var(--text-muted); font-size: .85rem; }
     .ps-grid figure { margin: 0; background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 14px; overflow: hidden; }
     .ps-grid figure a { display: block; background: #0A1628; }
-    .ps-grid img { display: block; width: 100%; height: auto; }
+    .ps-grid img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
     .ps-grid figcaption { padding: 12px 14px 14px; font-size: .88rem; line-height: 1.6; color: var(--text-primary); }
     .ps-grid figcaption span { display: block; font-size: .76rem; color: var(--text-muted); margin-top: 2px; }
 
@@ -1485,21 +1496,25 @@
     <p class="section-desc">차미마스터에서 데모 현장 「[데모] 지상 1층 철골 공장」을 열어 찍은 화면입니다.</p>
     <p class="ps-note">현장·발주처·인물 이름은 모두 데모용 가상 정보입니다. Screenshots of the live app on a demo site; all names are fictitious.</p>
 
+    <div class="ps-video">
+      <div class="ps-vwrap">
+        <video id="psVideo" src="/assets/video/omni_tbm_10s.mp4" poster="/assets/video/omni_tbm_10s.webp" width="960" height="540" autoplay muted playsinline controls preload="metadata" aria-label="차미안전 TBM 소개 영상 10초"></video>
+        <button type="button" class="ps-sound" id="psSound">🔊 소리 켜고 처음부터 보기</button>
+      </div>
+      <p>차미안전 TBM — 작업 전 안전점검회의 소개 (10초)<span>Chami Safety TBM in 10 seconds</span></p>
+    </div>
+
     <div class="ps-field">
       <h3>TBM · 작업 전 안전점검회의</h3>
       <p class="ps-en">1st Field · Toolbox Meeting on the worker’s phone</p>
       <div class="ps-grid">
         <figure>
-          <a href="/assets/screens/tbm2_gov.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm2_gov.webp" width="484" height="778" loading="lazy" alt="TBM 근로자 화면 — 정부 고지사항 낭독"></a>
+          <a href="/assets/screens/tbm2_gov_43.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm2_gov_43.webp" width="484" height="363" loading="lazy" alt="TBM 근로자 화면 — 정부 고지사항 낭독"></a>
           <figcaption>근로자 휴대폰에서 차미녀가 그날의 정부 고지사항을 읽어 줍니다<span>Today’s government safety notice, read aloud</span></figcaption>
         </figure>
         <figure>
-          <a href="/assets/screens/tbm3_register_v2.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm3_register_v2.webp" width="480" height="708" loading="lazy" alt="TBM 근로자 화면 — 위험성평가 등록부 항목"></a>
-          <figcaption>확정된 위험성평가 등록부 항목을 그대로 보여 주며 낭독합니다<span>Items from the confirmed risk assessment register</span></figcaption>
-        </figure>
-        <figure>
-          <a href="/assets/screens/tbm4_card.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm4_card.webp" width="484" height="390" loading="lazy" alt="TBM 오늘의 카드"></a>
-          <figcaption>오늘의 카드 — 「이렇게 하면 다칩니다 / 이렇게 하세요」와 근거 조항<span>Daily safety card with the legal basis</span></figcaption>
+          <a href="/assets/screens/tbm3_register_43.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm3_register_43.webp" width="480" height="360" loading="lazy" alt="TBM 근로자 화면 — 위험성평가 등록부 항목"></a>
+          <figcaption>확정된 위험성평가 등록부 항목을 보여 주며 핵심을 낭독합니다<span>Items from the confirmed risk assessment register</span></figcaption>
         </figure>
       </div>
     </div>
@@ -1509,15 +1524,11 @@
       <p class="ps-en">2nd Field · Risk Assessment</p>
       <div class="ps-grid">
         <figure>
-          <a href="/assets/screens/ra1_main.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra1_main.webp" width="655" height="715" loading="lazy" alt="위험성평가 시작 화면"></a>
-          <figcaption>현장의 상품·공종·확정 서명자(현장소장 1인)·3×3 척도를 정하고 최초·정기·수시·상시 평가를 시작합니다<span>Initial, periodic, ad-hoc and continuous rounds on a 3×3 scale</span></figcaption>
+          <a href="/assets/screens/ra1_main_43.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra1_main_43.webp" width="655" height="491" loading="lazy" alt="위험성평가 시작 화면"></a>
+          <figcaption>기준일의 기상·공정률을 함께 보며 최초·정기·수시·상시 평가를 시작합니다<span>Initial, periodic, ad-hoc and continuous rounds with the day’s weather and progress</span></figcaption>
         </figure>
         <figure>
-          <a href="/assets/screens/ra3_items_v2.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra3_items_v2.webp" width="652" height="680" loading="lazy" alt="위험성평가 항목 목록"></a>
-          <figcaption>공종별 유해·위험요인과 감소대책, 위험성 수준(3×3)<span>Hazards, controls and risk level by work type</span></figcaption>
-        </figure>
-        <figure>
-          <a href="/assets/screens/ra2_auto.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra2_auto.webp" width="655" height="410" loading="lazy" alt="기상 조건 자동 판정과 위험작업 트리거"></a>
+          <a href="/assets/screens/ra2_auto_43.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra2_auto_43.webp" width="655" height="491" loading="lazy" alt="기상 조건 자동 판정과 위험작업 트리거"></a>
           <figcaption>강풍·우천 기준 자동 판정과 공정률 구간별 위험작업 알림<span>Weather thresholds and progress-based high-risk work alerts</span></figcaption>
         </figure>
       </div>
@@ -1528,17 +1539,11 @@
       <p class="ps-en">3rd Field · Technical Guidance</p>
       <div class="ps-grid">
         <figure>
-          <a href="/assets/screens/tg2_step4.webp" target="_blank" rel="noopener"><img src="/assets/screens/tg2_step4.webp" width="655" height="448" loading="lazy" alt="기술지도 마법사 4단계 현재 유해위험요인"></a>
+          <a href="/assets/screens/tg2_step4_43.webp" target="_blank" rel="noopener"><img src="/assets/screens/tg2_step4_43.webp" width="597" height="448" loading="lazy" alt="기술지도 마법사 4단계 현재 유해위험요인"></a>
           <figcaption>7단계 작성 마법사 — 이전 회차 위험성평가·OPS·OPL·기계기구 점검표에서 위험요인을 불러옵니다<span>7-step report wizard with reusable hazard libraries</span></figcaption>
         </figure>
-        <figure>
-          <a href="/assets/screens/tg3_item.webp" target="_blank" rel="noopener"><img src="/assets/screens/tg3_item.webp" width="655" height="650" loading="lazy" alt="기술지도 지적 항목 입력"></a>
-          <figcaption>지적 항목마다 관련 법조항이 붙고, 강도·빈도(1~3)와 근접·전체 사진을 기록합니다<span>Each finding with the related regulation, 1–3 ratings and photos</span></figcaption>
-        </figure>
-        <figure>
-          <a href="/assets/screens/tg4_report.webp" target="_blank" rel="noopener"><img src="/assets/screens/tg4_report.webp" width="603" height="535" loading="lazy" alt="기술지도 결과보고서 미리보기"></a>
-          <figcaption>건설재해예방 기술지도 결과보고서 미리보기<span>Technical guidance result report preview</span></figcaption>
-        </figure>
+        <!-- 기술지도 결과보고서 스크린샷 자리 — 사장님 10-08 「비워 둬라」(새 결과보고서 화면이 나오면 이 칸을 figure 로 바꾼다 · 4:3) -->
+        <div class="ps-slot" aria-hidden="true"></div>
       </div>
     </div>
   </div>
@@ -1815,6 +1820,32 @@
   @media (max-width:820px){#quote .pcards{grid-template-columns:1fr 1fr}}
 </style>
 <script>
+  // 제품 화면 첫머리 영상 — 소리 있게 · 한 번만 재생(반복 없음) · 멈춤 가능 (사장님 10-08)
+  // 브라우저는 사용자가 페이지를 한 번도 누르지 않았으면 소리 있는 자동재생을 막는다 → 처음엔 소리 없이 한 번 돌고,
+  // ① 버튼을 누르거나 ② 이미 페이지를 누른 적이 있는 사람이 영상까지 내려오면 소리를 켜고 처음부터 한 번 튼다.
+  // 멈춤·다시 재생은 영상 아래 조작 막대(controls)로 한다. 끝나면 마지막 장면에서 멈추고 「다시 보기」 버튼을 보인다.
+  (function () {
+    var v = document.getElementById('psVideo'), b = document.getElementById('psSound');
+    if (!v || !b) return;
+    v.loop = false;
+    var withSound = function () {
+      v.muted = false; v.currentTime = 0; b.hidden = true;
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { v.muted = true; b.hidden = false; });
+    };
+    b.addEventListener('click', withSound);
+    v.addEventListener('volumechange', function () { if (!v.muted) b.hidden = true; });
+    v.addEventListener('ended', function () { b.textContent = '🔊 소리와 함께 다시 보기'; b.hidden = false; });
+    var active = function () { return !!(navigator.userActivation && navigator.userActivation.hasBeenActive); };
+    if ('IntersectionObserver' in window) {
+      var seen = false;
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && e.intersectionRatio >= 0.6 && !seen && active()) { seen = true; withSound(); }
+        });
+      }, { threshold: [0.6] }).observe(v);
+    }
+  })();
 (function(){
   const q=id=>document.getElementById(id);
   document.querySelectorAll('#quote .pcard').forEach(c=>c.addEventListener('click',()=>{
