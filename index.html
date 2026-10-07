@@ -361,6 +361,21 @@
       line-height: 1.8;
     }
 
+
+    /* ── PRODUCT SCREENS (데모 현장 실연) ──────────── */
+    .product-shots { padding: 96px 5%; background: var(--navy-mid); border-top: 1px solid var(--navy-border); }
+    .product-shots .ps-inner { max-width: 1240px; margin: 0 auto; }
+    .product-shots .ps-note { font-size: .85rem; color: var(--text-primary); opacity: .8; margin-top: 10px; }
+    .ps-field { margin-top: 56px; }
+    .ps-field h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 4px; }
+    .ps-field .ps-en { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary); opacity: .7; margin-bottom: 18px; }
+    .ps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; align-items: start; }
+    .ps-grid figure { margin: 0; background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 14px; overflow: hidden; }
+    .ps-grid figure a { display: block; background: #0A1628; }
+    .ps-grid img { display: block; width: 100%; height: auto; }
+    .ps-grid figcaption { padding: 12px 14px 14px; font-size: .88rem; line-height: 1.6; color: var(--text-primary); }
+    .ps-grid figcaption span { display: block; font-size: .76rem; color: var(--text-muted); margin-top: 2px; }
+
     /* ── TECH SECTION ────────────────────────── */
     .tech {
       background: linear-gradient(180deg, var(--navy-deepest) 0%, var(--navy-mid) 50%, var(--navy-deepest) 100%);
@@ -1238,6 +1253,7 @@
 <!-- NAV -->
 <nav>
   <a href="https://www.chami-safety.com" class="nav-app" target="_blank" rel="noopener">차미마스터 바로가기 →</a>
+  <a href="#product" class="nav-blog">제품 화면</a>
   <a href="#quote" class="nav-blog">견적문의</a>
   <a href="/blog/" class="nav-blog">블로그</a>
   <a href="mailto:ceo@chami-safety.kr" class="nav-cta">Contact Us</a>
@@ -1255,7 +1271,7 @@
   <div class="hero-content">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      AI Risk Engine · 특허 출원 2건
+      AI Risk Engine · 특허 출원
     </div>
     <p class="hero-en">AI-Native Construction Safety Management Platform</p>
     <h1>건설현장의 모든 위험을<br /><span class="highlight">데이터로 예측하다</span></h1>
@@ -1335,7 +1351,8 @@
           현장별 위험도를 규칙 기반으로 산출합니다.
           동일 입력 = 동일 결과, 재현 가능한 평가.
         </p>
-        <span class="tag">특허 출원 2건</span>
+        <p style="font-size:0.82rem;margin-top:10px;opacity:0.85"><strong>특허 출원</strong> — 「국가 재해통계 기반 고정 밑값과 점검 되먹임을 이용한 건설현장 위험성평가 방법 및 규칙표 기반 예상 위험 제시 방법」<br>국가 재해통계로 정한 고정 밑값에 현장 점검 결과를 되먹여 건설현장의 위험성을 산출하고, 공종별 규칙표로 예상 위험을 제시하는 방법</p>
+        <span class="tag">특허 출원</span>
       </div>
 
       <div class="tech-card">
@@ -1457,6 +1474,73 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- PRODUCT SCREENS: 데모 현장 실연 스크린샷 (C-1 2026-10-07) -->
+<section class="product-shots" id="product">
+  <div class="ps-inner">
+    <p class="section-tag">Product Screens</p>
+    <h2 class="section-title">실제 작동 화면 — 3필드</h2>
+    <p class="section-desc">차미마스터에서 데모 현장 「[데모] 지상 1층 철골 공장」을 열어 찍은 화면입니다.</p>
+    <p class="ps-note">현장·발주처·인물 이름은 모두 데모용 가상 정보입니다. Screenshots of the live app on a demo site; all names are fictitious.</p>
+
+    <div class="ps-field">
+      <h3>TBM · 작업 전 안전점검회의</h3>
+      <p class="ps-en">1st Field · Toolbox Meeting on the worker’s phone</p>
+      <div class="ps-grid">
+        <figure>
+          <a href="/assets/screens/tbm2_gov.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm2_gov.webp" width="484" height="778" loading="lazy" alt="TBM 근로자 화면 — 정부 고지사항 낭독"></a>
+          <figcaption>근로자 휴대폰에서 차미녀가 그날의 정부 고지사항을 읽어 줍니다<span>Today’s government safety notice, read aloud</span></figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/screens/tbm3_register_v2.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm3_register_v2.webp" width="480" height="708" loading="lazy" alt="TBM 근로자 화면 — 위험성평가 등록부 항목"></a>
+          <figcaption>확정된 위험성평가 등록부 항목을 그대로 보여 주며 낭독합니다<span>Items from the confirmed risk assessment register</span></figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/screens/tbm4_card.webp" target="_blank" rel="noopener"><img src="/assets/screens/tbm4_card.webp" width="484" height="390" loading="lazy" alt="TBM 오늘의 카드"></a>
+          <figcaption>오늘의 카드 — 「이렇게 하면 다칩니다 / 이렇게 하세요」와 근거 조항<span>Daily safety card with the legal basis</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="ps-field">
+      <h3>위험성평가</h3>
+      <p class="ps-en">2nd Field · Risk Assessment</p>
+      <div class="ps-grid">
+        <figure>
+          <a href="/assets/screens/ra1_main.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra1_main.webp" width="655" height="715" loading="lazy" alt="위험성평가 시작 화면"></a>
+          <figcaption>현장의 상품·공종·확정 서명자(현장소장 1인)·3×3 척도를 정하고 최초·정기·수시·상시 평가를 시작합니다<span>Initial, periodic, ad-hoc and continuous rounds on a 3×3 scale</span></figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/screens/ra3_items_v2.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra3_items_v2.webp" width="652" height="680" loading="lazy" alt="위험성평가 항목 목록"></a>
+          <figcaption>공종별 유해·위험요인과 감소대책, 위험성 수준(3×3)<span>Hazards, controls and risk level by work type</span></figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/screens/ra2_auto.webp" target="_blank" rel="noopener"><img src="/assets/screens/ra2_auto.webp" width="655" height="410" loading="lazy" alt="기상 조건 자동 판정과 위험작업 트리거"></a>
+          <figcaption>강풍·우천 기준 자동 판정과 공정률 구간별 위험작업 알림<span>Weather thresholds and progress-based high-risk work alerts</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="ps-field">
+      <h3>기술지도</h3>
+      <p class="ps-en">3rd Field · Technical Guidance</p>
+      <div class="ps-grid">
+        <figure>
+          <a href="/assets/screens/tg2_step4.webp" target="_blank" rel="noopener"><img src="/assets/screens/tg2_step4.webp" width="655" height="448" loading="lazy" alt="기술지도 마법사 4단계 현재 유해위험요인"></a>
+          <figcaption>7단계 작성 마법사 — 이전 회차 위험성평가·OPS·OPL·기계기구 점검표에서 위험요인을 불러옵니다<span>7-step report wizard with reusable hazard libraries</span></figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/screens/tg3_item.webp" target="_blank" rel="noopener"><img src="/assets/screens/tg3_item.webp" width="655" height="650" loading="lazy" alt="기술지도 지적 항목 입력"></a>
+          <figcaption>지적 항목마다 관련 법조항이 붙고, 강도·빈도(1~3)와 근접·전체 사진을 기록합니다<span>Each finding with the related regulation, 1–3 ratings and photos</span></figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/screens/tg4_report.webp" target="_blank" rel="noopener"><img src="/assets/screens/tg4_report.webp" width="603" height="535" loading="lazy" alt="기술지도 결과보고서 미리보기"></a>
+          <figcaption>건설재해예방 기술지도 결과보고서 미리보기<span>Technical guidance result report preview</span></figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1651,7 +1735,7 @@
       <button class="pcard" data-p="team"><b>각 작업팀</b><small>위험성평가 1팀 단위</small><em>월 1만원</em></button>
       <button class="pcard" data-p="org"><b>조직도</b><small>현장 조직 운영</small><em>월 1만원</em></button>
       <button class="pcard" data-p="tbm"><b>현장 TBM</b><small>작업 전 안전점검</small><em>월 1만원</em></button>
-      <button class="pcard" data-p="hq"><b>건설사 본사</b><small>현장 구독 · 본사 묶음</small><em>월 10만원~</em></button>
+      <button class="pcard" data-p="hq"><b>건설사 본사</b><small>현장 구독 · 다현장 협의</small><em>월 10만원~</em></button>
       <button class="pcard" data-p="agency"><b>건설업 재해예방전문지도기관</b><small>기관원 단위 계약</small><em>협의</em></button>
     </div>
 
@@ -1671,8 +1755,8 @@
       <span class="pout">월 1만원</span> <small>부가세 별도 · 15일 시험운영</small>
     </div>
 
-    <div class="ppanel" id="p-hq"><b>건설사 본사 — 현장 구독 + 본사 묶음</b>
-      <p>현장마다 공사금액으로 정해지는 월 임대료를 합산합니다. 5현장 이상은 묶음가가 적용됩니다.</p>
+    <div class="ppanel" id="p-hq"><b>건설사 본사 — 현장 구독</b>
+      <p>현장마다 공사금액으로 정해지는 월 임대료를 합산합니다. 5현장 이상 연간계약은 할인 조건을 협의합니다.</p>
       <div class="est">
         <label>공사금액 <input type="number" min="1" value="80" data-calc="hq" id="hq-amt"> 억원</label>
         <label>현장 수 <input type="number" min="1" value="1" data-calc="hq" id="hq-n"> 개</label>
@@ -1681,7 +1765,7 @@
       <table class="est-tbl">
         <tr><th>20억 미만</th><td>월 10만원</td><th>20~50억</th><td>월 15만원</td></tr>
         <tr><th>50억</th><td>월 20만원</td><th>120억</th><td>월 40만원 (선형 비례)</td></tr>
-        <tr><th>본사 묶음 5현장</th><td colspan="3">월 40만원 (+20억 이상 현장당 4만원) · 50억 이상 현장 보유 건설사·본사 시스템 연동은 협의</td></tr>
+        <tr><th>5현장 이상 · 연간계약</th><td colspan="3">할인 협의 · 50억 이상 현장 보유 건설사·본사 시스템 연동도 협의</td></tr>
       </table>
     </div>
 
@@ -1743,8 +1827,7 @@
   function calc(){
     const t=+document.querySelector('#quote [data-calc=team]').value||1; q('o-team').textContent='월 '+t+'만원';
     const a=+q('hq-amt').value||0, n=Math.max(1,+q('hq-n').value||1); let m,sub;
-    if(n>=5 && a<50){ const big=a>=20?n:0; m=40+4*big; sub='본사 묶음 5현장 40만'+(big?' + 20억↑ '+big+'현장 × 4만':'')+(n>5?' · 6현장↑ 산근은 협의':''); }
-    else { m=fee(a)*n; sub=(a<20?'20억 미만 기준가':a<50?'20~50억 정액':'50억↑ 산식')+(n>1?' × '+n+'현장':'')+(a>=50&&n>1?' · 50억↑ 다현장 = 협의':''); }
+    m=fee(a)*n; sub=(a<20?'20억 미만 기준가':a<50?'20~50억 정액':'50억↑ 산식')+(n>1?' × '+n+'현장':'')+(a>=50&&n>1?' · 50억↑ 다현장 = 협의':(n>=5?' · 5현장↑ 연간계약 할인 = 협의':''));
     q('o-hq').textContent='월 '+Math.round(m)+'만원'; q('o-hq-sub').textContent=sub+' · 부가세 별도 · 15일 시험운영';
   }
   document.querySelectorAll('#quote [data-calc]').forEach(el=>el.addEventListener('input',calc));
@@ -1859,14 +1942,14 @@
       <span class="footer-copy">© 2026 CHAMISAFETY 차미안전. All rights reserved.</span>
     </div>
     <div class="footer-right">
-      <span class="footer-tech-note">Core AI technology developed in-house — 2 patent applications filed</span>
+      <span class="footer-tech-note">Core AI technology developed in-house — patent application filed</span>
       <span class="footer-copy">chami-safety.kr · ceo@chami-safety.kr</span>
     </div>
   </div>
   <div class="footer-legal">
     <p>상호: 차미안전 (CHAMISAFETY) · 대표: 이규식 · 사업자등록번호: 589-32-02045</p>
     <p>소재지: 경기도 용인시 처인구 성산로 128-14, 지하 1층 (역북동, 예선빌딩)</p>
-    <p>업태/종목: 정보통신업 / 응용 소프트웨어 개발 및 공급업 · 문의: <a href="mailto:ceo@chami-safety.kr">ceo@chami-safety.kr</a> · <a href="/privacy/">개인정보 처리방침</a></p>
+    <p>업태/종목: 정보통신업 / 응용 소프트웨어 개발 및 공급업 · 문의: <a href="mailto:ceo@chami-safety.kr">ceo@chami-safety.kr</a> · <a href="/privacy/">개인정보 처리방침</a> · <a href="/terms/">이용약관</a> · <a href="/privacy/service/">서비스 개인정보 처리방침</a></p>
     <p class="license-notice">본 서비스는 한국산업안전보건공단이 공개·배포한 「사고사망 고위험요인(SIF) 아카이브」를 원문 변경 없이 참고하였습니다.</p>
   </div>
 </footer>
