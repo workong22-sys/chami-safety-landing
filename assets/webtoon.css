@@ -1,0 +1,20 @@
+/* CHAMISAFETY 안전웹툰 — blog.css 위에 얹는 추가 스타일 (2026-10-25) */
+.wt-figure { margin: 28px -5% 32px; }
+.wt-figure img { display: block; width: 100%; height: auto; background: var(--surface); }
+.wt-marks { list-style: none; margin: 8px 0 24px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.wt-marks li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.98rem; color: var(--text-primary); line-height: 1.7; }
+.wt-num { flex: 0 0 28px; height: 28px; border-radius: 50%; border: 2px dashed #DC2626; color: #DC2626;
+  font-weight: 800; font-size: 0.82rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+.wt-outro { font-weight: 600; color: var(--text-secondary); margin: 8px 0 24px; }
+.wt-source { font-size: 0.78rem; color: var(--text-muted); line-height: 1.7; margin: 24px 0; padding-top: 16px; border-top: 1px solid var(--green-line); }
+.wt-source-list { max-width: 860px; margin: -60px auto 80px; padding: 16px 5% 0; }
+.wt-pager { display: flex; justify-content: space-between; gap: 12px; margin: 32px 0 8px; flex-wrap: wrap; }
+.wt-pager a { font-size: 0.85rem; font-weight: 700; text-decoration: none; color: var(--text-primary); border-bottom: 2px solid var(--brand-green); padding-bottom: 2px; max-width: 48%; }
+.wt-pager .wt-next { margin-left: auto; text-align: right; }
+.wt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.wt-grid .post-card { padding: 20px 22px; }
+.wt-grid .post-card h2 { font-size: 1.05rem; }
+@media (max-width: 600px) {
+  .wt-figure { margin: 24px -5.5% 28px; }
+  .wt-pager a { max-width: 100%; }
+}
