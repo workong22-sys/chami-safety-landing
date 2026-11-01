@@ -374,6 +374,18 @@
     /* 제품 화면 — 모든 그림 4:3 한 비율 · 한 줄 2장(카드 400px) · 휴대폰은 1장 (A-1 10-08 사장님 「최적화 비율로 여백을 자르고 미세조정」) */
     .ps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 400px)); gap: 20px; align-items: stretch; }
     @media (max-width: 640px) { .ps-grid { grid-template-columns: minmax(0, 1fr); } }
+    /* 첫 화면 소개 영상 30초 (C-1 11-01) — 소리 없이 자동재생·반복, 「소리 켜고 보기」로 처음부터 소리와 함께 */
+    .hero-video { max-width: 760px; margin: 22px auto 0; }
+    .hero-video .hv-wrap { position: relative; }
+    .hero-video video { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 14px; border: 1px solid var(--navy-border); background: #000; box-shadow: 0 10px 30px rgba(10,22,40,.18); }
+    .hero-video .hv-sound { position: absolute; left: 14px; bottom: 14px; padding: 10px 18px; border-radius: 999px; border: 0; background: rgba(10, 22, 40, .78); color: #fff; font-size: .95rem; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+    .hero-video .hv-sound:hover { background: rgba(10, 22, 40, .92); }
+    .hero-video .hv-sound[hidden] { display: none; }
+    .hero-video p { margin-top: 8px; font-size: .86rem; color: var(--text-primary); text-align: left; }
+    .hero-video p span { display: block; font-size: .76rem; opacity: .8; margin-top: 2px; }
+    .hero-video .hv-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .hero-video .hv-links a { display: inline-block; padding: 8px 16px; border: 1px solid var(--navy-border); border-radius: 999px; color: var(--text-primary); font-size: .86rem; font-weight: 600; text-decoration: none; background: #fff; }
+    .hero-video .hv-links a:hover { border-color: var(--accent-light); color: var(--accent-light); }
     .ps-video { margin-top: 36px; max-width: 820px; }
     .ps-video .ps-vwrap { position: relative; }
     .ps-video .ps-sound { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 12px 22px; border-radius: 999px; border: 0; background: rgba(10, 22, 40, .72); color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; box-shadow: 0 6px 24px rgba(0,0,0,.35); }
@@ -1307,6 +1319,17 @@
         운영사: 차미안전 (대표 이규식).
       </p>
     </div>
+    <div class="hero-video">
+      <div class="hv-wrap">
+        <video id="heroVideo" src="/assets/video/promo_30s_v4.mp4" poster="/assets/video/promo_30s_v4.webp" width="960" height="540" muted autoplay loop playsinline preload="metadata" aria-label="차미안전 소개 영상 30초"></video>
+        <button type="button" class="hv-sound" id="heroSound">▶ 소리 켜고 보기</button>
+      </div>
+      <p>차미안전 소개 영상 (30초) · 생성형 AI로 만든 그림·배경음 포함, 앱 화면은 데모 현장<span>CHAMISAFETY in 30 seconds · includes AI-generated imagery and music</span></p>
+      <div class="hv-links">
+        <a href="https://youtu.be/MTcrIJJ-Y-4" target="_blank" rel="noopener">▶ 유튜브에서 보기</a>
+        <a href="https://www.facebook.com/chamisafety" target="_blank" rel="noopener">페이스북 페이지 →</a>
+      </div>
+    </div>
     <div class="hero-actions">
       <a href="https://www.chami-safety.com" class="btn-primary" target="_blank" rel="noopener">차미마스터 바로가기 →</a>
       <a href="mailto:ceo@chami-safety.kr" class="btn-secondary">Contact Us</a>
@@ -1832,6 +1855,18 @@
   @media (max-width:820px){#quote .pcards{grid-template-columns:1fr 1fr}}
 </style>
 <script>
+  // 첫 화면 소개 영상 30초 (C-1 11-01) — 소리 없이 자동재생·반복. 「▶ 소리 켜고 보기」 = 처음부터 소리와 함께 · 움직임 줄이기 설정이면 자동재생하지 않음
+  (function () {
+    var v = document.getElementById('heroVideo'), b = document.getElementById('heroSound');
+    if (!v || !b) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }
+    else { v.muted = true; var p0 = v.play(); if (p0 && p0.catch) p0.catch(function () {}); }   // 일부 브라우저는 autoplay 속성만으로 시작하지 않아 한 번 더 재생 요청
+    b.addEventListener('click', function () {
+      v.muted = false; v.loop = false; v.controls = true; v.currentTime = 0; b.hidden = true;
+      var p = v.play(); if (p && p.catch) p.catch(function () { b.hidden = false; });
+    });
+    v.addEventListener('ended', function () { b.textContent = '▶ 소리와 함께 다시 보기'; b.hidden = false; });
+  })();
   // 제품 화면 첫머리 영상 — 데모 TBM 2분 32초 (사장님 10-11) · 자동재생 없음 · 반복 없음
   // 「▶ 소리 켜고 보기」 버튼이나 아래 조작 막대(controls)로 재생한다. 재생 중에는 버튼을 숨기고, 끝나면 「다시 보기」로 보인다.
   (function () {
